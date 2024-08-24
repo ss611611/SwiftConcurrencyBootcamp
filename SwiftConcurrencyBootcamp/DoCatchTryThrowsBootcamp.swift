@@ -49,7 +49,7 @@ class DoCatchTryThrowsBootcampViewModel: ObservableObject {
     @Published var text: String = "Starting text."
     let manager = DoCatchTryThrowsBootcampDataManager()
     
-    func featchTitle() {
+    func fetchTitle() {
         /*
         let returnValue = manager.getTitle()
         if let newTitle = returnValue.title {
@@ -98,7 +98,7 @@ struct DoCatchTryThrowsBootcamp: View {
             .frame(width: 300, height: 300)
             .background(Color.blue)
             .onTapGesture {
-                viewModel.featchTitle()
+                viewModel.fetchTitle()
             }
     }
 }
