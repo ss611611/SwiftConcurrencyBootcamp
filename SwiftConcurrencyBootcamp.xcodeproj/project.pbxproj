@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EED07B5A2C7C1ED70027D6C6 /* AsyncAwaitBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED07B592C7C1ED70027D6C6 /* AsyncAwaitBootcamp.swift */; };
+		EED07B5C2C7C33760027D6C6 /* TaskBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED07B5B2C7C33760027D6C6 /* TaskBootcamp.swift */; };
 		EEEB8F082C799C9C005E0FF9 /* SwiftConcurrencyBootcampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB8F072C799C9C005E0FF9 /* SwiftConcurrencyBootcampApp.swift */; };
 		EEEB8F0A2C799C9C005E0FF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB8F092C799C9C005E0FF9 /* ContentView.swift */; };
 		EEEB8F0C2C799C9E005E0FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEEB8F0B2C799C9E005E0FF9 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		EED07B592C7C1ED70027D6C6 /* AsyncAwaitBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitBootcamp.swift; sourceTree = "<group>"; };
+		EED07B5B2C7C33760027D6C6 /* TaskBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskBootcamp.swift; sourceTree = "<group>"; };
 		EEEB8F042C799C9C005E0FF9 /* SwiftConcurrencyBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftConcurrencyBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEB8F072C799C9C005E0FF9 /* SwiftConcurrencyBootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConcurrencyBootcampApp.swift; sourceTree = "<group>"; };
 		EEEB8F092C799C9C005E0FF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				EEEB8F152C79B919005E0FF9 /* DoCatchTryThrowsBootcamp.swift */,
 				EEEB8F172C79D363005E0FF9 /* DownloadImageAsync.swift */,
 				EED07B592C7C1ED70027D6C6 /* AsyncAwaitBootcamp.swift */,
+				EED07B5B2C7C33760027D6C6 /* TaskBootcamp.swift */,
 				EEEB8F0B2C799C9E005E0FF9 /* Assets.xcassets */,
 				EEEB8F0D2C799C9E005E0FF9 /* Preview Content */,
 			);
@@ -149,6 +152,7 @@
 				EEEB8F182C79D363005E0FF9 /* DownloadImageAsync.swift in Sources */,
 				EEEB8F162C79B919005E0FF9 /* DoCatchTryThrowsBootcamp.swift in Sources */,
 				EEEB8F0A2C799C9C005E0FF9 /* ContentView.swift in Sources */,
+				EED07B5C2C7C33760027D6C6 /* TaskBootcamp.swift in Sources */,
 				EED07B5A2C7C1ED70027D6C6 /* AsyncAwaitBootcamp.swift in Sources */,
 				EEEB8F082C799C9C005E0FF9 /* SwiftConcurrencyBootcampApp.swift in Sources */,
 			);
