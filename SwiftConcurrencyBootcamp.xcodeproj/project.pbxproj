@@ -19,6 +19,7 @@
 		EEEB8F162C79B919005E0FF9 /* DoCatchTryThrowsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB8F152C79B919005E0FF9 /* DoCatchTryThrowsBootcamp.swift */; };
 		EEEB8F182C79D363005E0FF9 /* DownloadImageAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEB8F172C79D363005E0FF9 /* DownloadImageAsync.swift */; };
 		EEEE4C182C7D75B400E60DEA /* StructClassActorBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEE4C172C7D75B400E60DEA /* StructClassActorBootcamp.swift */; };
+		EEEE4C1A2C7DBBAF00E60DEA /* ActorsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEE4C192C7DBBAF00E60DEA /* ActorsBootcamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		EEEB8F152C79B919005E0FF9 /* DoCatchTryThrowsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchTryThrowsBootcamp.swift; sourceTree = "<group>"; };
 		EEEB8F172C79D363005E0FF9 /* DownloadImageAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsync.swift; sourceTree = "<group>"; };
 		EEEE4C172C7D75B400E60DEA /* StructClassActorBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructClassActorBootcamp.swift; sourceTree = "<group>"; };
+		EEEE4C192C7DBBAF00E60DEA /* ActorsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsBootcamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				EED07B5F2C7C766C0027D6C6 /* TaskGroupBootcamp.swift */,
 				EED07B612C7C81560027D6C6 /* CheckedContinuationBootcamp.swift */,
 				EEEE4C172C7D75B400E60DEA /* StructClassActorBootcamp.swift */,
+				EEEE4C192C7DBBAF00E60DEA /* ActorsBootcamp.swift */,
 				EEEB8F0B2C799C9E005E0FF9 /* Assets.xcassets */,
 				EEEB8F0D2C799C9E005E0FF9 /* Preview Content */,
 			);
@@ -164,6 +167,7 @@
 				EEEB8F182C79D363005E0FF9 /* DownloadImageAsync.swift in Sources */,
 				EEEB8F162C79B919005E0FF9 /* DoCatchTryThrowsBootcamp.swift in Sources */,
 				EEEB8F0A2C799C9C005E0FF9 /* ContentView.swift in Sources */,
+				EEEE4C1A2C7DBBAF00E60DEA /* ActorsBootcamp.swift in Sources */,
 				EED07B622C7C81560027D6C6 /* CheckedContinuationBootcamp.swift in Sources */,
 				EEEE4C182C7D75B400E60DEA /* StructClassActorBootcamp.swift in Sources */,
 				EED07B5C2C7C33760027D6C6 /* TaskBootcamp.swift in Sources */,
