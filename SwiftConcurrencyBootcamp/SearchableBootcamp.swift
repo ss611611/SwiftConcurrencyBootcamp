@@ -39,6 +39,10 @@ final class SearchableViewModel: ObservableObject {
     let manager = RestaurantManager()
     private var cancellables = Set<AnyCancellable>()
     
+    var isSearching: Bool {
+        !searchText.isEmpty
+    }
+    
     init() {
         addSubscribers()
     }
@@ -78,14 +82,18 @@ final class SearchableViewModel: ObservableObject {
 struct SearchableBootcamp: View {
     
     @StateObject private var viewModel = SearchableViewModel()
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                ForEach(viewModel.allRestaurants) { restaurant in
+                ForEach(viewModel.isSearching ? viewModel.filteredRestaurants : viewModel.allRestaurants) { restaurant in
                     RestaurantRow(restaurant: restaurant)
                 }
             }
             .padding()
+            
+//            Text("ViewModel is searching: \(viewModel.isSearching.description)")
+//            SearchChildView()
         }
         .searchable(text: $viewModel.searchText, placement: .automatic, prompt: Text("Search restaurants..."))
 //        .navigationBarTitleDisplayMode(.inline)
@@ -105,6 +113,14 @@ struct SearchableBootcamp: View {
         .padding()
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
         .background(Color.black.opacity(0.05))
+    }
+}
+
+struct SearchChildView: View {
+    @Environment(\.isSearching) private var isSearching
+    
+    var body: some View {
+        Text("Child View is searching: \(isSearching.description)")
     }
 }
 
