@@ -58,8 +58,11 @@ final class SearchableViewModel: ObservableObject {
             return
         }
         
+        let search = searchText.lowercased()
         filteredRestaurants = allRestaurants.filter({ restaurant in
-            
+            let titleContainsSearch = restaurant.title.lowercased().contains(search)
+            let cuisineContainsSearch = restaurant.cuisine.rawValue.lowercased().contains(search)
+            return titleContainsSearch || cuisineContainsSearch
         })
     }
     
