@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EEB824302C8EDB2A00C54A01 /* PhotosPickerBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8242F2C8EDB2A00C54A01 /* PhotosPickerBootcamp.swift */; };
 		EEB824322C8EE87500C54A01 /* AsyncStreamBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB824312C8EE87500C54A01 /* AsyncStreamBootcamp.swift */; };
+		EEB824342C8EF49500C54A01 /* ObservableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB824332C8EF49500C54A01 /* ObservableBootcamp.swift */; };
 		EEC000232C895DAB003B254E /* GlobalActorBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC000222C895DAB003B254E /* GlobalActorBootcamp.swift */; };
 		EEC000252C8967FB003B254E /* SendableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC000242C8967FB003B254E /* SendableBootcamp.swift */; };
 		EED07B5A2C7C1ED70027D6C6 /* AsyncAwaitBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED07B592C7C1ED70027D6C6 /* AsyncAwaitBootcamp.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		EEB8242F2C8EDB2A00C54A01 /* PhotosPickerBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerBootcamp.swift; sourceTree = "<group>"; };
 		EEB824312C8EE87500C54A01 /* AsyncStreamBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStreamBootcamp.swift; sourceTree = "<group>"; };
+		EEB824332C8EF49500C54A01 /* ObservableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableBootcamp.swift; sourceTree = "<group>"; };
 		EEC000222C895DAB003B254E /* GlobalActorBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalActorBootcamp.swift; sourceTree = "<group>"; };
 		EEC000242C8967FB003B254E /* SendableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendableBootcamp.swift; sourceTree = "<group>"; };
 		EED07B592C7C1ED70027D6C6 /* AsyncAwaitBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitBootcamp.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				EED59F402C8C450B00FA435D /* SearchableBootcamp.swift */,
 				EEB8242F2C8EDB2A00C54A01 /* PhotosPickerBootcamp.swift */,
 				EEB824312C8EE87500C54A01 /* AsyncStreamBootcamp.swift */,
+				EEB824332C8EF49500C54A01 /* ObservableBootcamp.swift */,
 				EEEB8F0B2C799C9E005E0FF9 /* Assets.xcassets */,
 				EEEB8F0D2C799C9E005E0FF9 /* Preview Content */,
 			);
@@ -194,6 +197,7 @@
 				EEEB8F182C79D363005E0FF9 /* DownloadImageAsync.swift in Sources */,
 				EEEB8F162C79B919005E0FF9 /* DoCatchTryThrowsBootcamp.swift in Sources */,
 				EEEB8F0A2C799C9C005E0FF9 /* ContentView.swift in Sources */,
+				EEB824342C8EF49500C54A01 /* ObservableBootcamp.swift in Sources */,
 				EEC000252C8967FB003B254E /* SendableBootcamp.swift in Sources */,
 				EEEE4C1A2C7DBBAF00E60DEA /* ActorsBootcamp.swift in Sources */,
 				EEB824302C8EDB2A00C54A01 /* PhotosPickerBootcamp.swift in Sources */,
