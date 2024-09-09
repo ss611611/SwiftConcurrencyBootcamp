@@ -47,7 +47,7 @@ final class SearchableViewModel: ObservableObject {
     }
     
     var showSearchSuggestions: Bool {
-        searchText.count < 3
+        searchText.count < 5
     }
     
     enum SearchScopeOption: Hashable {
@@ -140,6 +140,26 @@ final class SearchableViewModel: ObservableObject {
         
         return suggestions
     }
+    
+    func getRestaurantSuggestions() -> [Restaurant] {
+        guard showSearchSuggestions else {
+            return []
+        }
+        var suggestions: [Restaurant] = []
+        
+        let search = searchText.lowercased()
+        
+        if search.contains("ita") {
+            suggestions.append(contentsOf: allRestaurants.filter({ $0.cuisine == .italian }))
+        }
+        if search.contains("jap") {
+            suggestions.append(contentsOf: allRestaurants.filter({ $0.cuisine == .japanese }))
+        }
+        
+        return suggestions
+    }
+    
+    
 }
 
 struct SearchableBootcamp: View {
@@ -171,6 +191,11 @@ struct SearchableBootcamp: View {
             ForEach(viewModel.getSearchSuggestions(), id: \.self) { suggestion in
                 Text(suggestion)
                     .searchCompletion(suggestion)
+            }
+            ForEach(viewModel.getRestaurantSuggestions(), id: \.self) { suggestion in
+                NavigationLink(value: suggestion) {
+                    Text(suggestion.title)
+                }
             }
         })
 //        .navigationBarTitleDisplayMode(.inline)
