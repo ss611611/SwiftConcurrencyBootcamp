@@ -46,6 +46,10 @@ final class SearchableViewModel: ObservableObject {
         !searchText.isEmpty
     }
     
+    var showSearchSuggestions: Bool {
+        searchText.count < 3
+    }
+    
     enum SearchScopeOption: Hashable {
         case all
         case cuisine(option: CuisineOption)
@@ -112,6 +116,9 @@ final class SearchableViewModel: ObservableObject {
     }
     
     func getSearchSuggestions() -> [String] {
+        guard showSearchSuggestions else {
+            return []
+        }
         var suggestions: [String] = []
         
         let search = searchText.lowercased()
