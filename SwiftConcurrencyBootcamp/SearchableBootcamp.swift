@@ -150,7 +150,9 @@ struct SearchableBootcamp: View {
         ScrollView {
             VStack(spacing: 20) {
                 ForEach(viewModel.isSearching ? viewModel.filteredRestaurants : viewModel.allRestaurants) { restaurant in
-                    RestaurantRow(restaurant: restaurant)
+                    NavigationLink(value: restaurant) {
+                        RestaurantRow(restaurant: restaurant)
+                    }
                 }
             }
             .padding()
@@ -176,18 +178,23 @@ struct SearchableBootcamp: View {
         .task {
             await viewModel.loadestaurants()
         }
+        .navigationDestination(for: Restaurant.self) { restaurant in
+            Text(restaurant.title.uppercased())
+        }
     }
     
     private func RestaurantRow(restaurant: Restaurant) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(restaurant.title)
                 .font(.headline)
+                .foregroundColor(.red)
             Text(restaurant.cuisine.rawValue.capitalized)
                 .font(.caption)
         }
         .padding()
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
         .background(Color.black.opacity(0.05))
+        .tint(.primary)
     }
 }
 
