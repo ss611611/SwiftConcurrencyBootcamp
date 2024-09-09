@@ -36,11 +36,28 @@ final class SearchableViewModel: ObservableObject {
     @Published private(set) var allRestaurants: [Restaurant] = []
     @Published private(set) var filteredRestaurants: [Restaurant] = []
     @Published var searchText: String = ""
+    @Published var searchScope: SearchScopeOption = .all
+    @Published private(set) var allSearchScopes: [SearchScopeOption] = []
+    
     let manager = RestaurantManager()
     private var cancellables = Set<AnyCancellable>()
     
     var isSearching: Bool {
         !searchText.isEmpty
+    }
+    
+    enum SearchScopeOption: Hashable {
+        case all
+        case cuisine(option: CuisineOption)
+        
+        var title: String {
+            switch self {
+            case .all:
+                return "All"
+            case .cuisine(let option):
+                return option.rawValue.capitalized
+            }
+        }
     }
     
     init() {
@@ -73,6 +90,9 @@ final class SearchableViewModel: ObservableObject {
     func loadestaurants() async {
         do {
             allRestaurants = try await manager.getAllRestaurants()
+            
+            let allCuisines = Set(allRestaurants.map { $0.cuisine })
+            allSearchScopes = [.all] + allCuisines.map({ SearchScopeOption.cuisine(option: $0) })
         } catch {
             print(error)
         }
@@ -96,6 +116,11 @@ struct SearchableBootcamp: View {
 //            SearchChildView()
         }
         .searchable(text: $viewModel.searchText, placement: .automatic, prompt: Text("Search restaurants..."))
+        .searchScopes($viewModel.searchScope, scopes: {
+            ForEach(viewModel.allSearchScopes, id: \.self) { scope in
+                Text(scope.title)
+            }
+        })
 //        .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Restaurants")
         .task {
