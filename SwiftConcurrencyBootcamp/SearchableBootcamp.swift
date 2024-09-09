@@ -66,21 +66,34 @@ final class SearchableViewModel: ObservableObject {
     
     private func addSubscribers() {
         $searchText
+            .combineLatest($searchScope)
             .delay(for: 0.3, scheduler: DispatchQueue.main)
-            .sink { [weak self] searchText in
-                self?.filterRestaurants(searchText: searchText)
+            .sink { [weak self] (searchText, searchScope) in
+                self?.filterRestaurants(searchText: searchText, currentSearchScope: searchScope)
             }
             .store(in: &cancellables)
     }
     
-    private func filterRestaurants(searchText: String) {
+    private func filterRestaurants(searchText: String, currentSearchScope: SearchScopeOption) {
         guard !searchText.isEmpty else {
             filteredRestaurants = []
+            searchScope = .all
             return
         }
         
+        // Filter on search scope
+        var restaurantsInScope = allRestaurants
+        switch currentSearchScope {
+        case .all:
+            break
+        case .cuisine(let option):
+            restaurantsInScope = allRestaurants.filter({ $0.cuisine == option })
+        }
+        
+        
+        // Filter on search text
         let search = searchText.lowercased()
-        filteredRestaurants = allRestaurants.filter({ restaurant in
+        filteredRestaurants = restaurantsInScope.filter({ restaurant in
             let titleContainsSearch = restaurant.title.lowercased().contains(search)
             let cuisineContainsSearch = restaurant.cuisine.rawValue.lowercased().contains(search)
             return titleContainsSearch || cuisineContainsSearch
@@ -119,6 +132,7 @@ struct SearchableBootcamp: View {
         .searchScopes($viewModel.searchScope, scopes: {
             ForEach(viewModel.allSearchScopes, id: \.self) { scope in
                 Text(scope.title)
+                    .tag(scope)
             }
         })
 //        .navigationBarTitleDisplayMode(.inline)
