@@ -110,6 +110,29 @@ final class SearchableViewModel: ObservableObject {
             print(error)
         }
     }
+    
+    func getSearchSuggestions() -> [String] {
+        var suggestions: [String] = []
+        
+        let search = searchText.lowercased()
+        if search.contains("pa") {
+            suggestions.append("Pasta")
+        }
+        if search.contains("su") {
+            suggestions.append("Sushi")
+        }
+        if search.contains("bu") {
+            suggestions.append("Burger")
+        }
+        suggestions.append("Market")
+        suggestions.append("Grocery")
+        
+        suggestions.append(CuisineOption.italian.rawValue.capitalized)
+        suggestions.append(CuisineOption.japanese.rawValue.capitalized)
+        suggestions.append(CuisineOption.american.rawValue.capitalized)
+        
+        return suggestions
+    }
 }
 
 struct SearchableBootcamp: View {
@@ -135,12 +158,12 @@ struct SearchableBootcamp: View {
                     .tag(scope)
             }
         })
-//        .searchSuggestions({
-//            Text("Hello world!")
-//            Text("Hello world!")
-//            Text("Hello world!")
-//            Text("Hello world!")
-//        })
+        .searchSuggestions({
+            ForEach(viewModel.getSearchSuggestions(), id: \.self) { suggestion in
+                Text(suggestion)
+                    .searchCompletion(suggestion)
+            }
+        })
 //        .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Restaurants")
         .task {
